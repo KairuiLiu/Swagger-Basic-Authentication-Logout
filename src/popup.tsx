@@ -15,9 +15,13 @@ const Popup = () => {
 
   return (
     <>
-      <h1>
-        {active?'ON':'OFF'}
-      </h1>
+      <div style={{ width: "160px" }} >
+        <strong>Swagger-Basic-Authentication-Logout</strong>
+        <h2>Working: {active?'ON':'OFF'}</h2><hr/>
+        <p>
+        This extension is still in beta. <a href="https://github.com/KairuiLiu/Swagger-Basic-Authentication-Logout" target="_blank">Feedback Here👋</a>
+        </p>
+      </div>
     </>
   );
 };
