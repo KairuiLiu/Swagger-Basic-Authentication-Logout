@@ -5,9 +5,9 @@
   <p>
     <strong>Clear the basic authentication credentials record by the browser on Swagger</strong>
   </p>
-
   <p>
-    <img alt="swagger" src="https://img.shields.io/badge/Swagger-85EA2D?style=flat-square&logo=Swagger&logoColor=black"/> <img alt="chrome" src="https://img.shields.io/badge/Chrome Extension-4285F4?style=flat-square&logo=GoogleChrome&logoColor=white"/><img alt="react" src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=black"/><img alt="go" src="https://img.shields.io/badge/Webpack-8DD6F9?style=flat-square&logo=Webpack&logoColor=black"/>
+    <img alt="swagger" src="https://img.shields.io/badge/Swagger-85EA2D?style=flat-square&logo=Swagger&logoColor=black"/> <img alt="chrome" src="https://img.shields.io/badge/Chrome Extension-4285F4?style=flat-square&logo=GoogleChrome&logoColor=white"/> <img alt="react" src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=black"/> <img alt="go" src="https://img.shields.io/badge/Webpack-8DD6F9?style=flat-square&logo=Webpack&logoColor=black"/>
+
 
   </p>
 </div>
@@ -16,7 +16,9 @@
 
 This extension provide a Logout button for Swagger API page. With almost all the browser would like to save basic authentication credentials automatically, It is hard to "Logout" if the website using basic authentication.  And it also makes developers hard to debug multi-user APIs
 
-![demonstration-1](./image/demonstration-1.png)
+<div align="center">
+  <img src="./image/demonstration-1.png"/>
+</div>
 
 ### ⚙️ Install
 
@@ -31,16 +33,28 @@ This extension provide a Logout button for Swagger API page. With almost all the
 
 - Support of firefox is still on road...
 
-  ### 🛠️ Useage
+### 🛠️ Useage
 
 - Just install the extension, once you open a swagger API page and the badge of icon turns "ON", it works
-- when 
-- www-
-- 
+- When any request is responsed as not 400 - 500, There will be a "Logout" button, just click it, you can logout. It also means that, requests no matter whether it using basic authentication will be a button there. Logout a request without basic authentication will get error.
+- Sometimes when you click logout, the browser will popup a menu and ask you enter the username and password, just cancel it! This is  caused because you set a [WWW-Authenticate](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/WWW-Authenticate) header on the response. A good way to circumvent this annoying problem is to not return the WWW-Authenticate header for requests with wrong username and password during debugging.
+- If you do not like the extension, there is also a JavaScript code in `/script` can also release the feature. You should run the script when the page has loaded.
 
 ### 🤔 How it work
 
-In fact, we can not actually logout using 
+In fact, we can not actually logout base on basic authentication, There are 2 ways to "Logout"
+
+1. Clear the data of website in browser
+
+   the basic authentication credentials is not stored in Cookie or LocalStorage ..., It just saved by the browser. Using the following way, we can clean the credentials
+
+   - For chrome: type `chrome://settings/clearBrowserData` on address bar (or `Ctrl+Shift+Del`), select `Advanced > Cookie and other website data > clean`
+
+   - For Firefox: type `about:preferences#privacy` on address bar, select `clean data Cookie and other website data > clean`
+
+2. Login with a wrong user
+
+   Once the browser save the credentials, we can relogin and overwrite the credentials. And, if we login with a wrong username and password, we can clear the credentials. The most easy way to clean the credentials of `http://example.com` is visit `http://wrong:user@example.com`. It is also the method extension used.
 
 
 ### 🧑‍💻 Develop
