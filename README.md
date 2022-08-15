@@ -37,13 +37,13 @@ This extension provide a Logout button for Swagger API page. With almost all the
 
 - After installing the extension, once you open a Swagger API page the extension will automatically work with the badge of icon turns "ON"
 
-- When any request is responsed with code not 400 - 500, There will appear a "Logout" button. Click it you can logout. 
+- When any request is responsed with code not 400 - 500, There will appear a "Logout" button. Click it you can logout.
 
   It also means that, requests, no matter whether it is using basic authentication will be appened a button. Logout a request without basic authentication will get error.
 
 - Sometimes when you click logout, the browser will popup a menu and ask you enter the username and password. Just cancel it! This is caused by the server setted a [WWW-Authenticate](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/WWW-Authenticate) header on the response. A good way to circumvent this annoying problem is to not return the WWW-Authenticate header for requests with wrong username and password in debugging mode.
 
-- If you do not like the extension, there is also a JavaScript code in `/script` can also release the feature. You should run the script when the page has loaded.
+- If you do not like the extension, there is also a JavaScript code in `/script` can also release the feature: when the page has loaded, copy the code in `/script/index.js`, press `F12`, switch to the Console tab, paste the code and press `Enter` to run the code.
 
 ### 🤔 How it work
 
