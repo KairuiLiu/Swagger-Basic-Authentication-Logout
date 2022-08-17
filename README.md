@@ -22,7 +22,7 @@ This extension provide a Logout button for Swagger API page. With almost all the
 
 ### ⚙️ Install
 
-- Install on Chrome Web Store (still under review...)
+- Install on [Chrome Web Store](https://chrome.google.com/webstore/detail/swagger-basic-authenticat/odoockcomgcdpmdhnenigjdjaiibibhk)
 - Install the offline package on Chrome
   - Download the `Swagger-Basic-Authentication-Logout.crx` from the [Release Page](https://github.com/KairuiLiu/Swagger-Basic-Authentication-Logout/releases)
   - Rename the file to  `Swagger-Basic-Authentication-Logout.zip` and unzip it.
