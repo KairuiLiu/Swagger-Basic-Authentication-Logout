@@ -1,3 +1,9 @@
+# ⚠ 紧急修正: 这个扩展不会在返回 http 4xx 时显示 logout, 这回导致 http 403 无法登出, 请使用 script/index.js 的代代码. 这个被临时修正了
+
+# ⚠ Emergency Fix: this extension does not display logout when it returns HTTP 4xx. This causes HTTP 403 to fail to log out. Use Script/Index. exe. JS code. This has been temporarily fixed
+
+---
+
 <div align="center">
   <img src="./image/icon.png" width="125"/>
   <h2>Swagger-Basic-Authentication-Logout</h2>
