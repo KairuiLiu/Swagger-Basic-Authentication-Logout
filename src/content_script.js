@@ -70,7 +70,7 @@ chrome.runtime.onMessage.addListener(function (msg, sender, response) {
           10
         );
         d.button.classList.add('hidden');
-        if (!(400 <= code && code < 500)) {
+        if (code!=401) {
           d.href = d.apiContent.querySelector('.request-url pre').innerText;
           d.button.classList.remove('hidden');
         }

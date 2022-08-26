@@ -1,9 +1,3 @@
-# ⚠ 紧急修正: 这个扩展不会在返回 http 4xx 时显示 logout, 这回导致 http 403 无法登出, 请使用 script/index.js 的代代码. 这个被临时修正了
-
-# ⚠ Emergency Fix: this extension does not display logout when it returns HTTP 4xx. This causes HTTP 403 to fail to log out. Use Script/Index. exe. JS code. This has been temporarily fixed
-
----
-
 <div align="center">
   <img src="./image/icon.png" width="125"/>
   <h2>Swagger-Basic-Authentication-Logout</h2>
@@ -43,7 +37,7 @@ This extension provide a Logout button for Swagger API page. With almost all the
 
 - After installing the extension, once you open a Swagger API page the extension will automatically work with the badge of icon turns "ON"
 
-- When any request is responsed with code not 400 - 500, There will appear a "Logout" button. Click it you can logout.
+- When any request is responsed with code not 401, There will appear a "Logout" button. Click it you can logout.
 
   It also means that, requests, no matter whether it is using basic authentication will be appened a button. Logout a request without basic authentication will get error.
 
@@ -79,13 +73,13 @@ In fact, we can not actually logout base on basic authentication, There are 2 wa
 - Build
 
   ```bash
-  npm run build
+  pnpm run build
   ```
 
 - Build in watch mode in terminal
 
   ```bash
-  npm run watch
+  pnpm run watch
   ```
 
 - Build in watch mode in Visual Studio Code: type `Ctrl + Shift + B`
