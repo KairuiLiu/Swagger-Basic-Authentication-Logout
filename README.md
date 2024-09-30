@@ -12,6 +12,7 @@
   </p>
 </div>
 
+
 ### ✨ Feature
 
 This extension provide a Logout button for Swagger API page. With almost all the browsers save basic authentication certificate automatically, it is hard to "logout" the website using basic authentication and also makes developers hard to debug multi-user APIs.
@@ -83,6 +84,17 @@ In fact, we can not actually logout base on basic authentication, There are 2 wa
   ```
 
 - Build in watch mode in Visual Studio Code: type `Ctrl + Shift + B`
+
+### Update
+
+Recently we found an untested "official" method for vintage browsers (IE6+):
+
+```JavaScript
+document.execCommand("ClearAuthenticationCache", "false")
+```
+
+This is not an official method, nor does it work for Chrome browsers. (After all, this HTTP Basic Auth method is as old as IE, it should be buried in the grave)
+![image](https://github.com/user-attachments/assets/0465f3e3-6da4-422f-9a19-d691f79e206e)
 
 ### 🥰 Reference
 
